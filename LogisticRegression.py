@@ -45,7 +45,7 @@ def format_data(path,split = 0.875):
     
 
 
-x_train,y_train,x_test,y_test = format_data('C:\\Users\\mubta\\Desktop\\CSE422\\Lab\\framingham.csv')
+x_train,y_train,x_test,y_test = format_data('C:\\Users\\mubta\\Desktop\\CSE422\\Lab\\CSE422\\framingham.csv')
 model_1 = LogisticRegression(lr = 0.001)
 model_1.train(x_train,y_train)
 predictions = model_1.predict(x_test)
@@ -63,7 +63,7 @@ predictions = model_2.predict(x_test)
 accuracy = np.mean(predictions == y_test)
 print(f"Accuracy: {accuracy}")
 
-x_train,y_train,x_test,y_test = format_data('C:\\Users\\mubta\\Desktop\\CSE422\\Lab\\train_and_test2.csv')
+x_train,y_train,x_test,y_test = format_data('C:\\Users\\mubta\\Desktop\\CSE422\\Lab\\CSE422\\train_and_test2.csv')
 
 model_3 = LogisticRegression(lr = 0.001)
 model_3.train(x_train,y_train)
