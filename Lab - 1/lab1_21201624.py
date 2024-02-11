@@ -12,10 +12,11 @@ for i in lines:
     d[key] = [int(h)]
     for j in range(2,len(i),2):
         d[key].append((i[j],int(i[j+1]))) # putting the child with path in dict
+print(d)
 def a_star_search(d,goal):
     p = [] #priorityqueue
     parent = {} #parent dict
-    key = list(d.keys())[0]
+    key = list(d.keys())[0] #cahnge this value to set the starting point from any graph node
     h = d[key][0]
     g = 0
     heapq.heappush(p,(h,key)) #push starting node
