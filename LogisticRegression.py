@@ -50,7 +50,8 @@ model_1 = LogisticRegression(lr)
 model_1.train(x_train,y_train)
 predictions = model_1.predict(x_test)
 accuracy = np.mean(predictions == y_test)
-print(f"Accuracy: {accuracy}")
+accuracy*=100
+print(f"Accuracy: {accuracy}%")
 
 from sklearn.model_selection import train_test_split
 from sklearn import datasets
@@ -61,7 +62,8 @@ model_2 = LogisticRegression(lr)
 model_2.train(x_train,y_train)
 predictions = model_2.predict(x_test)
 accuracy = np.mean(predictions == y_test)
-print(f"Accuracy: {accuracy}")
+accuracy*=100
+print(f"Accuracy: {accuracy}%")
 
 x_train,y_train,x_test,y_test = format_data('C:\\Users\\mubta\\Desktop\\CSE422\\Lab\\CSE422\\train_and_test2.csv')
 
@@ -69,4 +71,5 @@ model_3 = LogisticRegression(lr)
 model_3.train(x_train,y_train)
 predictions = model_3.predict(x_test)
 accuracy = np.mean(predictions == y_test)
-print(f"Accuracy: {accuracy}")
+accuracy*=100
+print(f"Accuracy: {accuracy}%")
