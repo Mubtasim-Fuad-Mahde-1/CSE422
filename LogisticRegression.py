@@ -44,9 +44,9 @@ def format_data(path,split = 0.875):
     
     
 
-
+lr = 0.001
 x_train,y_train,x_test,y_test = format_data('C:\\Users\\mubta\\Desktop\\CSE422\\Lab\\CSE422\\framingham.csv')
-model_1 = LogisticRegression(lr = 0.001)
+model_1 = LogisticRegression(lr)
 model_1.train(x_train,y_train)
 predictions = model_1.predict(x_test)
 accuracy = np.mean(predictions == y_test)
@@ -57,7 +57,7 @@ from sklearn import datasets
 bc = datasets.load_breast_cancer()
 x, y = bc.data, bc.target
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1234)
-model_2 = LogisticRegression(lr = 0.001)
+model_2 = LogisticRegression(lr)
 model_2.train(x_train,y_train)
 predictions = model_2.predict(x_test)
 accuracy = np.mean(predictions == y_test)
@@ -65,7 +65,7 @@ print(f"Accuracy: {accuracy}")
 
 x_train,y_train,x_test,y_test = format_data('C:\\Users\\mubta\\Desktop\\CSE422\\Lab\\CSE422\\train_and_test2.csv')
 
-model_3 = LogisticRegression(lr = 0.001)
+model_3 = LogisticRegression(lr)
 model_3.train(x_train,y_train)
 predictions = model_3.predict(x_test)
 accuracy = np.mean(predictions == y_test)
