@@ -1,6 +1,6 @@
 import heapq
 d = {}
-file = open('C://Users//mubta//Desktop//CSE422//Lab//CSE422//Lab - 1//Input_file.txt','r')
+file = open('C://Users//21201624//Desktop//CSE422//Lab - 1//Input_file.txt','r')
 lines = file.readlines()
 for i in range(len(lines)):
     lines[i] = lines[i].split() #split each line based on spaces
@@ -12,7 +12,6 @@ for i in lines:
     d[key] = [int(h)]
     for j in range(2,len(i),2):
         d[key].append((i[j],int(i[j+1]))) # putting the child with path in dict
-print(d)
 def a_star_search(d,goal):
     p = [] #priorityqueue
     parent = {} #parent dict
