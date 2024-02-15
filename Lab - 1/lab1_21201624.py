@@ -1,7 +1,7 @@
 import heapq
 d = {}
-file = open('C://Users//21201624//Desktop//CSE422//Lab - 1//Input_file.txt','r')
-lines = file.readlines()
+file = open('C://Users//mubta//Desktop//CSE422//Lab//CSE422//Lab - 1//Input_file.txt','r') #copy path of input file and replace \ with //
+lines = file.readlines() 
 for i in range(len(lines)):
     lines[i] = lines[i].split() #split each line based on spaces
 for i in lines:
