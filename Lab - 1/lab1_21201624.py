@@ -1,3 +1,5 @@
+#Name: Mubtasim Fuad Mahde
+#ID: 21201624
 import heapq
 d = {}
 file = open('C://Users//mubta//Desktop//CSE422//Lab//CSE422//Lab - 1//Input_file.txt','r') #copy path of input file and replace \ with //
