@@ -68,7 +68,7 @@ iteration = 10000 #number of iterations
 
 
 global data,target
-file = open('C://Users//mubta//Desktop//CSE422//Lab//CSE422//Lab - 2//input_file_1.txt', 'r') #please change the file path as per requirements
+file = open('Lab - 2\input_file_1.txt', 'r') #please change the file path as per requirements
 data = file.readlines()
 for i in range(len(data)):
     x = data[i].split()
@@ -80,7 +80,7 @@ population = population_generator(len(data),size)
 print([tup[0] for tup in data])
 print(genetic_algorithm(population,iteration))
 
-file = open('C://Users//mubta//Desktop//CSE422//Lab//CSE422//Lab - 2//input_file_2.txt', 'r') #please change the file path as per requirements
+file = open('Lab - 2\input_file_2.txt', 'r') #please change the file path as per requirements
 data = file.readlines()
 for i in range(len(data)):
     x = data[i].split()
@@ -92,7 +92,7 @@ population = population_generator(len(data),size)
 print([tup[0] for tup in data])
 print(genetic_algorithm(population,iteration))
 
-file = open('C://Users//mubta//Desktop//CSE422//Lab//CSE422//Lab - 2//input_file_3.txt', 'r') #please change the file path as per requirements
+file = open('Lab - 2\input_file_3.txt', 'r') #please change the file path as per requirements
 data = file.readlines()
 for i in range(len(data)):
     x = data[i].split()
