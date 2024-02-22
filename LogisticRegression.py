@@ -1,3 +1,5 @@
+#Name: Mubtasim Fuad Mahde
+#ID: 21201624
 import numpy as np 
 
 class LogisticRegression():
@@ -45,7 +47,7 @@ def format_data(path,split = 0.875):
     
 
 lr = 0.001
-x_train,y_train,x_test,y_test = format_data('C:\\Users\\mubta\\Desktop\\CSE422\\Lab\\CSE422\\framingham.csv')
+x_train,y_train,x_test,y_test = format_data('framingham.csv')
 model_1 = LogisticRegression(lr)
 model_1.train(x_train,y_train)
 predictions = model_1.predict(x_test)
@@ -65,7 +67,7 @@ accuracy = np.mean(predictions == y_test)
 accuracy*=100
 print(f"Accuracy: {accuracy}%")
 
-x_train,y_train,x_test,y_test = format_data('C:\\Users\\mubta\\Desktop\\CSE422\\Lab\\CSE422\\train_and_test2.csv')
+x_train,y_train,x_test,y_test = format_data('train_and_test2.csv')
 
 model_3 = LogisticRegression(lr)
 model_3.train(x_train,y_train)
