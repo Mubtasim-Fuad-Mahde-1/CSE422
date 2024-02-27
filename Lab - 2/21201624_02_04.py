@@ -24,7 +24,7 @@ def crossover(x,y): # takes a pair of strings and perform crossover
     x = x[:i]
     y = y[i:]
     x = x+y
-    return x
+    return x 
     
 def mutation(x): #takes a string and randomly chooses a bit to mutate
     global data
