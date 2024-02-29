@@ -1,6 +1,9 @@
 #Name: Mubtasim Fuad Mahde
 #ID: 21201624
 import numpy as np 
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn import datasets
 
 class LogisticRegression():
     def __init__(self, lr = 0.001, i = 1000):
@@ -23,7 +26,7 @@ class LogisticRegression():
             dw = (1/len(x)) * np.dot(x.T, (y_pred - y))
             db = (1/len(x)) * np.sum(y_pred - y)
             self.weight -= self.lr * dw 
-            self.bias -= self.bias * db
+            self.bias -= self.lr * db
     def predict(self, x):
         linear_pred = np.dot(x, self.weight) + self.bias
         y_pred = self.sigmoid(linear_pred)
@@ -34,6 +37,9 @@ def format_data(path,split = 0.875):
     data = np.genfromtxt(path, delimiter=',')
     nan_rows = np.isnan(data).any(axis=1)
     data = data[~nan_rows]
+    if path == 'train_and_test2.csv':
+        idx = np.argwhere(np.all(data[..., :] == 0, axis=0))
+        data = np.delete(data, idx, axis=1)
     x,y = data[:,:data.shape[1]-1], data[:,data.shape[1]-1:]
     x = x[:,~np.all(x == 0, axis = 0)]
     new_min,new_max = -10,10
@@ -46,32 +52,39 @@ def format_data(path,split = 0.875):
     
     
 
-lr = 0.001
+lr = .1
+i = 100000
 x_train,y_train,x_test,y_test = format_data('framingham.csv')
-model_1 = LogisticRegression(lr)
+model_1 = LogisticRegression(lr, i)
 model_1.train(x_train,y_train)
 predictions = model_1.predict(x_test)
 accuracy = np.mean(predictions == y_test)
 accuracy*=100
+accuracy = round(accuracy)
 print(f"Accuracy: {accuracy}%")
 
-from sklearn.model_selection import train_test_split
-from sklearn import datasets
+
+lr = 1
+i = 1000
 bc = datasets.load_breast_cancer()
 x, y = bc.data, bc.target
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1234)
-model_2 = LogisticRegression(lr)
+model_2 = LogisticRegression(lr, i)
 model_2.train(x_train,y_train)
-predictions = model_2.predict(x_test)
+predictions = model_2.predict(x_test) #performance test
 accuracy = np.mean(predictions == y_test)
 accuracy*=100
+accuracy = round(accuracy)
 print(f"Accuracy: {accuracy}%")
 
-x_train,y_train,x_test,y_test = format_data('train_and_test2.csv')
 
-model_3 = LogisticRegression(lr)
+lr = 1
+i = 10000
+x_train,y_train,x_test,y_test = format_data('train_and_test2.csv')
+model_3 = LogisticRegression(lr, i)
 model_3.train(x_train,y_train)
 predictions = model_3.predict(x_test)
 accuracy = np.mean(predictions == y_test)
 accuracy*=100
+accuracy = accuracy
 print(f"Accuracy: {accuracy}%")
