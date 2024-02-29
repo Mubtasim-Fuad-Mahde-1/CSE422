@@ -1,8 +1,9 @@
+#Name: Mubtasim Fuad Mahde
+#ID: 21201624
 import random
 import math
 
-#id = input('Enter Your ID:')  # Take user input for ID
-id = '21201624'
+id = input('Enter Your ID:')  # Take user input for ID
 id = id.replace('0', '8')
 minimum = int(id[4])  # 5th digit
 maximum = math.ceil((int(id[-1]) * 10 + int(id[-2])) * 1.5)  # finding max
@@ -16,7 +17,7 @@ def max_func(s, a, b):
     else:
         s1, s2 = s[:int(len(s) / 2)], s[int(len(s) / 2):]
         val = -10000
-        alternate = min_func(s1,a,b)
+        alternate = min_func(s1,a,b) 
         if alternate > val:
             val = alternate
         if alternate >= b:
