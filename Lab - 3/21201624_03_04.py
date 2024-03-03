@@ -57,7 +57,7 @@ def min_func(s, a, b):
     return val
 
 
-def alpha_beta_algo(s, a, b):  # min max for range
+def alpha_beta_algo(s, a, b): 
     return max_func(s, a, b)
 
 print('Generated List =',terminal,'Shuffled for',S,'times')
