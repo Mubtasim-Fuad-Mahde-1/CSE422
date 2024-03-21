@@ -60,7 +60,6 @@ model_1.train(x_train,y_train)
 predictions = model_1.predict(x_test)
 accuracy = np.mean(predictions == y_test)
 accuracy*=100
-accuracy = round(accuracy)
 print(f"Accuracy: {accuracy}%")
 
 
@@ -74,7 +73,6 @@ model_2.train(x_train,y_train)
 predictions = model_2.predict(x_test) #performance test
 accuracy = np.mean(predictions == y_test)
 accuracy*=100
-accuracy = round(accuracy)
 print(f"Accuracy: {accuracy}%")
 
 
@@ -86,5 +84,4 @@ model_3.train(x_train,y_train)
 predictions = model_3.predict(x_test)
 accuracy = np.mean(predictions == y_test)
 accuracy*=100
-accuracy = accuracy
 print(f"Accuracy: {accuracy}%")

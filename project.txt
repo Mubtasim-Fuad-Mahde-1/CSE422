@@ -1,0 +1,10 @@
+data preprossessing
+1. delete duplicate
+2. remove null rows 
+3. replace null values with average (SimpleImputer)
+4. Feature Scaling (MinMax Scaler, Standard Scaler, Robust Scaler)
+5. KNN model classifier
+6. Encoding categorical Features
+7. one-hot encoding or ranked encoding
+8. Feature Engineering (reduce multiple features into 1 usefull feature)
+9. Feature Selection (corr or corelation)
