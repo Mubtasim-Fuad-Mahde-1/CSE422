@@ -53,8 +53,8 @@ def format_data(path,split = 0.875):
     
 
 lr = .1
-i = 1000
-x_train,y_train,x_test,y_test = format_data('framingham.csv')
+i = 10000
+x_train,y_train,x_test,y_test = format_data('Project/framingham.csv')
 model_1 = LogisticRegression(lr, i)
 model_1.train(x_train,y_train)
 predictions = model_1.predict(x_test)
@@ -78,7 +78,7 @@ print(f"Accuracy: {accuracy}%")
 
 lr = 1
 i = 1000
-x_train,y_train,x_test,y_test = format_data('train_and_test2.csv')
+x_train,y_train,x_test,y_test = format_data('Project/train_and_test2.csv')
 model_3 = LogisticRegression(lr, i)
 model_3.train(x_train,y_train)
 predictions = model_3.predict(x_test)
