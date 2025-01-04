@@ -12,17 +12,17 @@ terminal = random.sample(range(minimum, maximum), 8)
 S = int(id[3])
 
 def max_func(s, a, b):
-    if len(s) == 1:
-        return s[0]
+    if len(s) == 1: #if leaf node then return utility
+        return s[0] #return utlity and set V' of parent node
     else:
         s1, s2 = s[:int(len(s) / 2)], s[int(len(s) / 2):]
-        val = -10000
-        alternate = min_func(s1,a,b) 
-        if alternate > val:
+        val = -10000 # V is negative inf for max node
+        alternate = min_func(s1,a,b) #V' for max node 
+        if alternate > val: # if V' > V : V = V' for max (best alternate)
             val = alternate
-        if alternate >= b:
+        if alternate >= b: # if V' >= b : return V (pruning )
             return val
-        if alternate > a:
+        if alternate > a: # if V' > a : a = V' (updating a)
             a = alternate
         alternate = min_func(s2,a,b)
         if alternate > val:
@@ -31,7 +31,7 @@ def max_func(s, a, b):
             return val
         if alternate > a:
             a = alternate
-    return val
+    return val #default return is V
 
 
 def min_func(s, a, b):
@@ -39,13 +39,13 @@ def min_func(s, a, b):
         return s[0]
     else:
         s1, s2 = s[:int(len(s) / 2)], s[int(len(s) / 2):]
-        val = 10000
-        alternate = max_func(s1,a,b)
-        if alternate < val:
+        val = 10000 # V is positive inf for min node
+        alternate = max_func(s1,a,b) # V' for min node
+        if alternate < val: # best alternate
             val = alternate
-        if alternate <= a:
+        if alternate <= a: # pruning
             return val
-        if alternate < b:
+        if alternate < b: # updating b
             a = alternate
         alternate = max_func(s2,a,b)
         if alternate < val:
@@ -54,7 +54,7 @@ def min_func(s, a, b):
             return val
         if alternate < b:
             a = alternate
-    return val
+    return val #default return is V
 
 
 def alpha_beta_algo(s, a, b): 
